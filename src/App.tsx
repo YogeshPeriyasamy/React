@@ -1,6 +1,7 @@
 
-import './App.css'
-import Message from './Message'
+import './App.css';
+import Message from './Message';
+import ListGroup from './components/ListGroup';
 function App() {
   interface Exp{
     heading:string;
@@ -19,7 +20,10 @@ function App() {
           {
             messages.map((mess)=>{
               return(
+              <div>
               <Message heading={mess.heading} word={mess.word} date={mess.date} month={mess.month} year={mess.year} />
+              {mess.heading === "fire" ? <ListGroup /> : null} 
+              </div>
               )
             })
           }
